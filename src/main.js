@@ -10,13 +10,15 @@ import router from './router.js'
 import VueResource from 'vue-resource'
 Vue.use(VueResource)
 
-import { Header, Tabbar, TabItem, Swipe, SwipeItem } from 'mint-ui';
+import { Header, Tabbar, TabItem, Swipe, SwipeItem, Cell, CellSwipe } from 'mint-ui';
 import 'mint-ui/lib/style.css'
 Vue.component(Header.name, Header);
 Vue.component(Tabbar.name, Tabbar);
 Vue.component(TabItem.name, TabItem);
 Vue.component(Swipe.name, Swipe);
 Vue.component(SwipeItem.name, SwipeItem);
+Vue.component(Cell.name, Cell);
+Vue.component(CellSwipe.name, CellSwipe);
 
 import app from './App.vue'
 
