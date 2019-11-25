@@ -7,11 +7,16 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter) //手动安装vue-router
 import router from './router.js'
 
-import { Header,Tabbar, TabItem } from 'mint-ui';
+import VueResource from 'vue-resource'
+Vue.use(VueResource)
+
+import { Header, Tabbar, TabItem, Swipe, SwipeItem } from 'mint-ui';
 import 'mint-ui/lib/style.css'
 Vue.component(Header.name, Header);
 Vue.component(Tabbar.name, Tabbar);
 Vue.component(TabItem.name, TabItem);
+Vue.component(Swipe.name, Swipe);
+Vue.component(SwipeItem.name, SwipeItem);
 
 import app from './App.vue'
 
