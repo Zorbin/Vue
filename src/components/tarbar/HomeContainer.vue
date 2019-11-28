@@ -21,7 +21,6 @@ export default {
     getSwipeImg() {
       this.$http.get('api/getlunbo').then(result => {
         if(result.body.status === 0){
-          console.log(result.body)
           this.swipeimg = result.body.message;
         } else {
           Toast('获取轮播图失败');
