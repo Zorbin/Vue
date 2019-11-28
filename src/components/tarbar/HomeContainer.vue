@@ -1,14 +1,13 @@
 <template>
   <div>
-    <mt-swipe :auto="4000">
-      <mt-swipe-item v-for="item in swipeimg" :key="item.id"><img style="width=100%;height=100%;" :src="item.img" alt=""></mt-swipe-item>
-    </mt-swipe>
+    <swiper :swipe="swipeimg" :isfull="true"></swiper>
     <h1>这是首页</h1>
   </div>
 </template>
 
 <script>
 import { Toast } from 'mint-ui';
+import swiper from'../subcomponents/swiper.vue'
 export default {
   data(){
     return  {
@@ -20,7 +19,7 @@ export default {
   },
   methods: {
     getSwipeImg() {
-      this.$http.get('http://www.liulongbin.top:3005/api/getlunbo').then(result => {
+      this.$http.get('api/getlunbo').then(result => {
         if(result.body.status === 0){
           console.log(result.body)
           this.swipeimg = result.body.message;
@@ -29,6 +28,9 @@ export default {
         }
       })
     }
+  },
+  components: {
+    swiper
   }
 };
 </script>
@@ -39,7 +41,6 @@ div.mint-swipe-items-wrap{
 }
 
 .mint-swipe-items-wrap img{
-  width: 100%;
   height: 100%;
 }
 </style>

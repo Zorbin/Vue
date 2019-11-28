@@ -1,7 +1,5 @@
 <template>
-  <div>
-      <h1>这是搜索页</h1>
-  </div>
+  <h1> 图文评论页面</h1>
 </template>
 
 <script>

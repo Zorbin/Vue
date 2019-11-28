@@ -14,11 +14,12 @@
                 <img slot="icon" src="./images/taobao.png">
                 tab1
             </mt-tab-item>
-            <mt-tab-item id="search">
+            <mt-tab-item id="goods">
                 <img slot="icon" src="./images/taobao.png">
                 tab2
             </mt-tab-item>
             <mt-tab-item id="shopcar">
+                <span id="badge">0</span>
                 <img slot="icon" src="./images/taobao.png">
                 tab3
             </mt-tab-item>
@@ -36,21 +37,24 @@ export default {
     data() {
         return {selected: 'home'}
     },
+    mounted() {
+        this.selected = this.$route.path.split('/')[1]
+    },
     watch: {
         selected(newval,oldval){
             switch(newval){
                 case 'home':
-                    this.$router.push('home')
+                    this.$router.push('/home')
                     break;
-                case 'search':
-                    this.$router.push('search')
+                case 'goods':
+                    this.$router.push('/goods')
                     break;
                 
                 case 'shopcar':
-                    this.$router.push('shopcar')
+                    this.$router.push('/shopcar')
                     break;
                 case 'member':
-                    this.$router.push('member')
+                    this.$router.push('/member')
                     break;
             }
         }
@@ -61,7 +65,7 @@ export default {
 
 <style scoped>
 .app-container{
-    padding-top: 40px;
+    padding: 40px 0 55px;
     overflow-x: hidden;
 }
 
@@ -79,5 +83,24 @@ export default {
 .v-enter-active,
 .v-leave-active{
     transition: all 0.3s ease;
+}
+
+.mint-tabbar{
+    position: fixed;
+}
+.mint-tab-item:nth-child(3){
+    position: relative;
+}
+#badge{
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    color: #fff;
+    text-align: center;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    top: 5px;
+    right: 20px;
 }
 </style>

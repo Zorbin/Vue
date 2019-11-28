@@ -1,4 +1,5 @@
 {
     "presets": ["@babel/preset-env", "mobx"],
-    "plugins": ["@babel/plugin-transform-runtime"]
+    "plugins": ["@babel/plugin-transform-runtime", "transform-remove-strict-mode"],
+    "ignore": ["./src/lib/mui/js/mui.min.js"]
 }

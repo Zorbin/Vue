@@ -32,6 +32,7 @@ module.exports = { //指定入口和出口
     module: {
         rules: [
             { test: /\.css$/, use: ['style-loader', 'css-loader'] }, // 配置处理.css第三方loader规则 从右到左处理
+            { test: /\.scss$/, use: ['style-loader', 'css-loader', 'sass-loader']},
             { test: /\.(jpg|png|gif|bmp|jpeg)$/, use: [
                     {   
                         loader: 'url-loader',
